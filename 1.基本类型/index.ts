@@ -45,5 +45,35 @@ let notSure: any = 4
 notSure = 'may'
 notSure = false  //定义any后变量可以赋值为任何数据类型
 
+//void
+// 某种程度上来说，void类型像是与any类型相反，他表示没有任何类型。
+function warnUser(): void {
+    console.log("this is my waring message");
+}
+/* 声明一个void类型的变量没有什么大勇，因为你只能为它赋予undefind和null */
+let unusable: void = undefined
+
+//Null和Undefind
+// undefined 和 null 两者各自有自己的类型分别叫做undefind 和 null
+let u: undefined = undefined
+let n: null = null
 
 
+//Never
+/* never 类型表示的是那些永不存在的值的类型。例如，never类型是那些总是会抛出异常或根本就不会有返回值的函数表达式或者尖头函数表达式的返回值类型 */
+/* 返回never的函数必须存在无法到达的终点 */
+function error(message: string): never {
+    throw new Error(message)
+}
+/* 推断的返回值类型为never */
+function fail() {
+    return error('something failed')
+}
+
+//类型断言
+/*  */
+// let someValue:any = "this is a string"
+// let strLength:number = (<string>someValue).length
+/* or */
+let someValue:any = "this is a string"
+let strLength:number = (someValue as string).length
