@@ -56,3 +56,5 @@ sam.move()
 /* private */
 /* 如果其中一个类型里包含一个 private成员，那么只有当另外一个类型中也存在这样一个 private成员，
  并且它们都是来自同一处声明时，我们才认为这两个类型是兼容的。 */
+ /* protected */
+ /* protected 修饰符与 private 修饰符的行为很相似，但是有一点不同，protected成员在派生类中仍然可以访问 */
